@@ -36,7 +36,7 @@ def get_grid_status():
     return result
 
 @app.route('/')
-def hello_world():
+def human_friendly_output():
     status_to_response = {
         'Danger': 'Power grid is now in the Danger Zone!',
         'Warning': 'Power grid is now in the Warning Zone!',
@@ -49,7 +49,7 @@ def hello_world():
 
 
 @app.route('/status')
-def grid_status():
+def json_output():
     status = get_grid_status()
     response = {}
     response['status'] = status
